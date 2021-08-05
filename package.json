@@ -1,0 +1,11 @@
+{
+  "name": "github-issue",
+  "version": "1.0.0",
+  "description": "To test why unrerlated jobs get triggered",
+  "main": "index.js",
+  "repository": "git@github.com:vgmadhu/github-issue.git",
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

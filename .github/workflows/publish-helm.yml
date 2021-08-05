@@ -1,0 +1,30 @@
+name: Publish Helm Charts
+
+# Packages the helm chart and publishes to Artifactory
+#
+# Triggers only if the branch is 'master' and changes are made
+# to this file or any deploy config file
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-helm.yml'
+      - 'deploy/**'
+  workflow_dispatch:
+
+jobs:
+  helm_build:
+    name: Helm Package and Publish
+    runs-on: [ self-hosted, linux, kroger ]
+    defaults:
+      run:
+        working-directory: deploy
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: 'v3.1.2'
+      - name: Deploy Service Helm Chart
+        run: echo do-nothing step
