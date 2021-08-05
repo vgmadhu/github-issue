@@ -3,8 +3,8 @@ name: CI
 on: [push]
 
 jobs:
-  install-test:
-    runs-on: kroger
+  install:
+    runs-on: [ self-hosted, linux, kroger ]
 
     steps:
       - uses: actions/checkout@v2
